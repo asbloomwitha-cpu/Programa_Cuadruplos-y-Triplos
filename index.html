@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Generador interactivo de Cuádruplos y Triplos para expresiones matemáticas. Materia de Compiladores.">
+  <title>Generador de Cuádruplos y Triplos | Compiladores</title>
+  
+  <!-- Enlace al archivo de estilos CSS independiente -->
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+  <div class="container">
+    <!-- Encabezado del proyecto -->
+    <header>
+      <h1>Generador de Cuádruplos y Triplos</h1>
+      <p>Representación de código intermedio y cálculo de expresiones</p>
+    </header>
+
+    <!-- Componente de Alerta Visual (Opcional según rúbrica) -->
+    <div id="alerta" class="alert" role="alert"></div>
+
+    <!-- SECCIÓN 1: CAPTURA DE EXPRESIÓN Y CONTROLES -->
+    <section class="card">
+      <div class="form-group">
+        <label for="inputExpresion">Ingresa una expresión matemática o algebraica:</label>
+        <div class="input-row">
+          <input 
+            type="text" 
+            id="inputExpresion" 
+            placeholder="Ejemplo: a = 5 + 3 * 2 o x = a * b + c" 
+            value="a = 5 + 3 * 2"
+          >
+          <!-- Botón Calcular -->
+          <button id="btnCalcular" class="btn btn-primary" onclick="calcular()">
+            Calcular
+          </button>
+          <!-- Botón Limpiar -->
+          <button id="btnLimpiar" class="btn btn-secondary" onclick="limpiar()">
+            Limpiar
+          </button>
+        </div>
+      </div>
+
+      <!-- Sugerencias rápidas para probar con un clic -->
+      <div class="ejemplos">
+        <strong>Ejemplos rápidos:</strong>
+        <span class="chip" onclick="cargarEjemplo('a = 5 + 3 * 2')">Numérico: a = 5 + 3 * 2</span>
+        <span class="chip" onclick="cargarEjemplo('x = 10 * 2 + 8 / 4')">Numérico: x = 10 * 2 + 8 / 4</span>
+        <span class="chip" onclick="cargarEjemplo('res = a + b * c')">Simbólico: res = a + b * c</span>
+        <span class="chip" onclick="cargarEjemplo('z = a * b + c * d')">Simbólico: z = a * b + c * d</span>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 2: ÁREA DE RESULTADOS -->
+    <main id="areaResultados">
+      
+      <!-- Bloque: Resultado de la Operación -->
+      <section class="card">
+        <h2>Resultado de la Operación</h2>
+        <p class="card-desc">Valor numérico evaluado o representación simbólica final.</p>
+        <div class="resultado-box" id="boxResultado">
+          <h3>Valor Obtenido:</h3>
+          <p id="textoResultado">--</p>
+        </div>
+      </section>
+
+      <!-- Bloque: Tabla de Cuádruplos -->
+      <section class="card">
+        <h2>Procedimiento: Tabla de Cuádruplos</h2>
+        <p class="card-desc">Estructura de 4 campos: (Operador, Argumento 1, Argumento 2, Resultado temporal).</p>
+        <div class="table-responsive">
+          <table id="tablaCuadruplos">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Operador (op)</th>
+                <th>Argumento 1 (arg1)</th>
+                <th>Argumento 2 (arg2)</th>
+                <th>Resultado (res)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Filas generadas dinámicamente mediante app.js -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Bloque: Tabla de Triplos -->
+      <section class="card">
+        <h2>Procedimiento: Tabla de Triplos</h2>
+        <p class="card-desc">Estructura de 3 campos: (Operador, Argumento 1, Argumento 2). Los temporales se reemplazan por punteros de posición (0), (1)...</p>
+        <div class="table-responsive">
+          <table id="tablaTriplos">
+            <thead>
+              <tr>
+                <th>Posición</th>
+                <th>Operador (op)</th>
+                <th>Argumento 1 (arg1)</th>
+                <th>Argumento 2 (arg2)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Filas generadas dinámicamente mediante app.js -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+      <p>Proyecto Escolar: Compiladores - Generación de Código Intermedio</p>
+    </footer>
+  </div>
+
+  <!-- Enlace al script JavaScript independiente -->
+  <script src="app.js"></script>
+</body>
+</html>

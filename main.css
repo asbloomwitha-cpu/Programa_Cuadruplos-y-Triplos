@@ -1,0 +1,277 @@
+/* ==============================================================================
+   ESTILOS GENERALES: GENERADOR DE TRIPLOS Y CUÁDRUPLOS
+   Diseño moderno, limpio y responsive
+   ============================================================================== */
+
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #eef2f7 0%, #dbe4ef 100%);
+  color: #2c3e50;
+  padding: 30px 15px;
+  min-height: 100vh;
+}
+
+/* Contenedor principal centrado */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Encabezado */
+header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+header h1 {
+  font-size: 28px;
+  color: #1a365d;
+  margin-bottom: 8px;
+}
+
+header p {
+  color: #4a5568;
+  font-size: 15px;
+}
+
+/* Tarjetas (Cards) con bordes suaves y sombra */
+.card {
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+  margin-bottom: 22px;
+  border: 1px solid #e2e8f0;
+}
+
+.card h2 {
+  font-size: 19px;
+  color: #2b6cb0;
+  margin-bottom: 6px;
+}
+
+.card-desc {
+  font-size: 13px;
+  color: #718096;
+  margin-bottom: 14px;
+}
+
+/* Formulario e Inputs */
+.form-group {
+  margin-bottom: 14px;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.input-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+input[type="text"] {
+  flex: 1;
+  min-width: 250px;
+  padding: 12px 14px;
+  font-size: 15px;
+  border: 2px solid #cbd5e0;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+input[type="text"]:focus {
+  border-color: #3182ce;
+}
+
+/* Botones con estilo llamativo */
+.btn {
+  padding: 12px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-primary {
+  background-color: #3182ce;
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: #2b6cb0;
+}
+
+.btn-secondary {
+  background-color: #e2e8f0;
+  color: #4a5568;
+}
+
+.btn-secondary:hover {
+  background-color: #cbd5e0;
+}
+
+/* Botones de sugerencias rápidas */
+.ejemplos {
+  margin-top: 12px;
+  font-size: 13px;
+  color: #718096;
+}
+
+.ejemplos strong {
+  color: #4a5568;
+}
+
+.chip {
+  display: inline-block;
+  background: #edf2f7;
+  color: #2b6cb0;
+  padding: 4px 10px;
+  border-radius: 14px;
+  margin: 3px 4px 0 0;
+  cursor: pointer;
+  font-size: 12px;
+  border: 1px solid #cbd5e0;
+  transition: background-color 0.2s;
+}
+
+.chip:hover {
+  background: #e2e8f0;
+}
+
+/* Alertas personalizadas */
+.alert {
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  margin-bottom: 16px;
+  display: none;
+}
+
+.alert-error {
+  background-color: #fed7d7;
+  color: #9b2c2c;
+  border: 1px solid #feb2b2;
+}
+
+.alert-success {
+  background-color: #c6f6d5;
+  color: #22543d;
+  border: 1px solid #9ae6b4;
+}
+
+/* Área de Resultado evaluado */
+.resultado-box {
+  background: #ebf8ff;
+  border-left: 5px solid #3182ce;
+  padding: 14px 18px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
+
+.resultado-box h3 {
+  font-size: 16px;
+  color: #2b6cb0;
+  margin-bottom: 4px;
+}
+
+.resultado-box p {
+  font-size: 18px;
+  font-weight: bold;
+  color: #1a365d;
+}
+
+/* Tablas de cuádruplos y triplos */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+th, td {
+  padding: 12px 14px;
+  text-align: center;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+th {
+  background-color: #2d3748;
+  color: #ffffff;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+tr:nth-child(even) {
+  background-color: #f7fafc;
+}
+
+tr:hover {
+  background-color: #edf2f7;
+}
+
+.badge-op {
+  background: #e2e8f0;
+  color: #2d3748;
+  font-weight: bold;
+  padding: 3px 8px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.badge-temp {
+  background: #feebc8;
+  color: #7b341e;
+  font-weight: bold;
+  padding: 3px 8px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.badge-pointer {
+  background: #c6f6d5;
+  color: #22543d;
+  font-weight: bold;
+  padding: 3px 8px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+/* Estado vacío cuando no hay cálculos */
+.empty-state {
+  text-align: center;
+  padding: 30px;
+  color: #a0aec0;
+  font-style: italic;
+}
+
+/* Pie de página */
+footer {
+  text-align: center;
+  margin-top: 25px;
+  font-size: 12px;
+  color: #718096;
+}
