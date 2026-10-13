@@ -1,9 +1,4 @@
-/* ==============================================================================
-   ESTILOS GENERALES: GENERADOR DE TRIPLOS Y CUÁDRUPLOS
-   Diseño moderno, limpio y responsive
-   ============================================================================== */
-
-/* Reset básico */
+/* Ajustes generales de la página. */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -18,13 +13,13 @@ body {
   min-height: 100vh;
 }
 
-/* Contenedor principal centrado */
+/* Mantiene el contenido centrado y con un ancho cómodo de leer. */
 .container {
   max-width: 900px;
   margin: 0 auto;
 }
 
-/* Encabezado */
+/* Título y descripción de la práctica. */
 header {
   text-align: center;
   margin-bottom: 25px;
@@ -41,7 +36,7 @@ header p {
   font-size: 15px;
 }
 
-/* Tarjetas (Cards) con bordes suaves y sombra */
+/* Secciones blancas que separan cada parte de la práctica. */
 .card {
   background: #ffffff;
   padding: 24px;
@@ -63,7 +58,7 @@ header p {
   margin-bottom: 14px;
 }
 
-/* Formulario e Inputs */
+/* Campo donde se escribe la expresión. */
 .form-group {
   margin-bottom: 14px;
 }
@@ -96,7 +91,7 @@ input[type="text"]:focus {
   border-color: #3182ce;
 }
 
-/* Botones con estilo llamativo */
+/* Botones para calcular y limpiar. */
 .btn {
   padding: 12px 20px;
   font-size: 15px;
@@ -129,7 +124,7 @@ input[type="text"]:focus {
   background-color: #cbd5e0;
 }
 
-/* Botones de sugerencias rápidas */
+/* Ejemplos que se pueden cargar con un clic. */
 .ejemplos {
   margin-top: 12px;
   font-size: 13px;
@@ -157,7 +152,7 @@ input[type="text"]:focus {
   background: #e2e8f0;
 }
 
-/* Alertas personalizadas */
+/* Mensajes de error y confirmación. */
 .alert {
   padding: 12px 16px;
   border-radius: 8px;
@@ -172,34 +167,7 @@ input[type="text"]:focus {
   border: 1px solid #feb2b2;
 }
 
-.alert-success {
-  background-color: #c6f6d5;
-  color: #22543d;
-  border: 1px solid #9ae6b4;
-}
-
-/* Área de Resultado evaluado */
-.resultado-box {
-  background: #ebf8ff;
-  border-left: 5px solid #3182ce;
-  padding: 14px 18px;
-  border-radius: 6px;
-  margin-bottom: 16px;
-}
-
-.resultado-box h3 {
-  font-size: 16px;
-  color: #2b6cb0;
-  margin-bottom: 4px;
-}
-
-.resultado-box p {
-  font-size: 18px;
-  font-weight: bold;
-  color: #1a365d;
-}
-
-/* Tablas de cuádruplos y triplos */
+/* Tablas del código intermedio. */
 .table-responsive {
   width: 100%;
   overflow-x: auto;
@@ -260,7 +228,7 @@ tr:hover {
   display: inline-block;
 }
 
-/* Estado vacío cuando no hay cálculos */
+/* Estilo para un mensaje cuando no hay contenido. */
 .empty-state {
   text-align: center;
   padding: 30px;
@@ -268,7 +236,7 @@ tr:hover {
   font-style: italic;
 }
 
-/* Pie de página */
+/* Texto al final de la página. */
 footer {
   text-align: center;
   margin-top: 25px;

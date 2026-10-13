@@ -3,28 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Generador interactivo de Cuádruplos y Triplos para expresiones matemáticas. Materia de Compiladores.">
-  <title>Generador de Cuádruplos y Triplos | Compiladores</title>
+  <meta name="description" content="Generador de triplos y cuádruplos para expresiones sencillas.">
+  <title>Generador de triplos y cuádruplos</title>
   
-  <!-- Enlace al archivo de estilos CSS independiente -->
+  <!-- Aquí se carga el archivo que da estilo a la página. -->
   <link rel="stylesheet" href="main.css">
 </head>
 <body>
 
   <div class="container">
-    <!-- Encabezado del proyecto -->
+    <!-- Presentación de la práctica. -->
     <header>
-      <h1>Generador de Cuádruplos y Triplos</h1>
-      <p>Representación de código intermedio y cálculo de expresiones</p>
+      <h1>Generador de triplos y cuádruplos</h1>
+      <p>Escribe una expresión para generar su código intermedio.</p>
     </header>
 
-    <!-- Componente de Alerta Visual (Opcional según rúbrica) -->
+    <!-- Los mensajes de aquí avisan si falta algo o si la expresión está lista. -->
     <div id="alerta" class="alert" role="alert"></div>
 
-    <!-- SECCIÓN 1: CAPTURA DE EXPRESIÓN Y CONTROLES -->
+    <!-- Escribe una operación o prueba uno de los ejemplos. -->
     <section class="card">
       <div class="form-group">
-        <label for="inputExpresion">Ingresa una expresión matemática o algebraica:</label>
+        <label for="inputExpresion">Escribe una expresión:</label>
         <div class="input-row">
           <input 
             type="text" 
@@ -32,78 +32,62 @@
             placeholder="Ejemplo: a = 5 + 3 * 2 o x = a * b + c" 
             value="a = 5 + 3 * 2"
           >
-          <!-- Botón Calcular -->
           <button id="btnCalcular" class="btn btn-primary" onclick="calcular()">
             Calcular
           </button>
-          <!-- Botón Limpiar -->
           <button id="btnLimpiar" class="btn btn-secondary" onclick="limpiar()">
             Limpiar
           </button>
         </div>
       </div>
 
-      <!-- Sugerencias rápidas para probar con un clic -->
       <div class="ejemplos">
-        <strong>Ejemplos rápidos:</strong>
-        <span class="chip" onclick="cargarEjemplo('a = 5 + 3 * 2')">Numérico: a = 5 + 3 * 2</span>
-        <span class="chip" onclick="cargarEjemplo('x = 10 * 2 + 8 / 4')">Numérico: x = 10 * 2 + 8 / 4</span>
-        <span class="chip" onclick="cargarEjemplo('res = a + b * c')">Simbólico: res = a + b * c</span>
-        <span class="chip" onclick="cargarEjemplo('z = a * b + c * d')">Simbólico: z = a * b + c * d</span>
+        <strong>Ejemplos:</strong>
+        <span class="chip" onclick="cargarEjemplo('a = b + c * d')">a = b + c * d</span>
+        <span class="chip" onclick="cargarEjemplo('x = (a + b) * c')">x = (a + b) * c</span>
       </div>
     </section>
 
-    <!-- SECCIÓN 2: ÁREA DE RESULTADOS -->
     <main id="areaResultados">
-      
-      <!-- Bloque: Resultado de la Operación -->
-      <section class="card">
-        <h2>Resultado de la Operación</h2>
-        <p class="card-desc">Valor numérico evaluado o representación simbólica final.</p>
-        <div class="resultado-box" id="boxResultado">
-          <h3>Valor Obtenido:</h3>
-          <p id="textoResultado">--</p>
-        </div>
-      </section>
 
-      <!-- Bloque: Tabla de Cuádruplos -->
+      <!-- Cada cuádruplo guarda operador, dos valores y el resultado temporal. -->
       <section class="card">
-        <h2>Procedimiento: Tabla de Cuádruplos</h2>
-        <p class="card-desc">Estructura de 4 campos: (Operador, Argumento 1, Argumento 2, Resultado temporal).</p>
+        <h2>Cuádruplos</h2>
+        <p class="card-desc">Operador, valor 1, valor 2 y resultado.</p>
         <div class="table-responsive">
           <table id="tablaCuadruplos">
             <thead>
               <tr>
                 <th>#</th>
-                <th>Operador (op)</th>
-                <th>Argumento 1 (arg1)</th>
-                <th>Argumento 2 (arg2)</th>
+                <th>Operador</th>
+                <th>Valor 1</th>
+                <th>Valor 2</th>
                 <th>Resultado (res)</th>
               </tr>
             </thead>
             <tbody>
-              <!-- Filas generadas dinámicamente mediante app.js -->
+              <!-- JavaScript agrega aquí las filas de la tabla. -->
             </tbody>
           </table>
         </div>
       </section>
 
-      <!-- Bloque: Tabla de Triplos -->
+      <!-- En los triplos, la posición reemplaza el resultado temporal. -->
       <section class="card">
-        <h2>Procedimiento: Tabla de Triplos</h2>
-        <p class="card-desc">Estructura de 3 campos: (Operador, Argumento 1, Argumento 2). Los temporales se reemplazan por punteros de posición (0), (1)...</p>
+        <h2>Triplos</h2>
+        <p class="card-desc">Operador, valor 1 y valor 2. Cada resultado se identifica por su posición.</p>
         <div class="table-responsive">
           <table id="tablaTriplos">
             <thead>
               <tr>
                 <th>Posición</th>
-                <th>Operador (op)</th>
-                <th>Argumento 1 (arg1)</th>
-                <th>Argumento 2 (arg2)</th>
+                <th>Operador</th>
+                <th>Valor 1</th>
+                <th>Valor 2</th>
               </tr>
             </thead>
             <tbody>
-              <!-- Filas generadas dinámicamente mediante app.js -->
+              <!-- JavaScript agrega aquí las filas de la tabla. -->
             </tbody>
           </table>
         </div>
@@ -111,13 +95,12 @@
 
     </main>
 
-    <!-- Pie de página -->
     <footer>
-      <p>Proyecto Escolar: Compiladores - Generación de Código Intermedio</p>
+      <p>Lenguajes y Autómatas II · Generación de código intermedio</p>
     </footer>
   </div>
 
-  <!-- Enlace al script JavaScript independiente -->
-  <script src="app.js"></script>
+  <!-- Aquí se carga el programa que procesa las expresiones. -->
+  <script src="index.js"></script>
 </body>
 </html>
